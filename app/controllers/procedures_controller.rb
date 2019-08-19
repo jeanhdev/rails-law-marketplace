@@ -12,6 +12,9 @@ class ProceduresController < ApplicationController
   end
 
   def create
+    @procedure = Procedure.new(procedure_params)
+    @procedure.save
+    redirect_to procedures_path
   end
 
   def edit
@@ -26,8 +29,8 @@ class ProceduresController < ApplicationController
     @procedure = Procedure.find(params:id)
   end
 
-  def params_procedure
-    params.require(:procedure).permit(:date, :status, :grievance)
+  def procedure_params
+    params.require(:procedure).permit(:date, :grievance)
   end
 
 end
