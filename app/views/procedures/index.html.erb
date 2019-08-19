@@ -1,0 +1,7 @@
+<h1>Mes procédures</h1>
+<% @procedures.each do |procedure| %>
+  <h2><%= procedure.service.title %></h2>
+  <p><%= procedure.status %></p>
+  <p><%= procedure.grievance %></p>
+  <p><%= procedure.user.last_name %></p>
+<% end %>
