@@ -6,5 +6,12 @@ Rails.application.routes.draw do
     resources :services
     resources :procedures, except: [:destroy]
   end
+
+  # resources :users do
+  #   collection do
+  #   get :dashboard
+  # end
+  # end
+
 end
 
