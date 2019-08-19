@@ -1,1 +1,38 @@
 // Specific CSS for your home-page
+.cta {
+    background-position: center;
+    background-size: cover; 
+    height: 75vh;
+}
+
+.container {
+    font-family: 'GTEestiDisplay-Medium',-apple-system,system-ui,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+    height: 500px;
+    align-items: center;
+}
+
+.container > img {
+    height: 350px;
+    width: 350px;
+}
+
+
+#tagline {
+    margin-right: 50px;
+}
+
+.choix {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.card {
+    width: 18rem;
+    height: 200px;
+    text-align: center;
+}
+
+.card h6 {
+    padding: 20px;
+}
