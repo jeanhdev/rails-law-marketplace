@@ -10,6 +10,9 @@ class User < ApplicationRecord
   validates :encrypted_password, presence: true
   validates :avatar, presence: true
 
+  # verifier que cette ligne pour l'avatar est utile
+  has_attachment :avatar
+
   JOBS = ['lawyer', 'notary', 'bailiff', 'jurist', 'justiciable']
   validates :job, inclusion: { in: JOBS }
 
