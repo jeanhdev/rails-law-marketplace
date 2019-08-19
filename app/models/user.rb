@@ -14,6 +14,6 @@ class User < ApplicationRecord
   validates :job, inclusion: { in: JOBS }
 
   # has_many :proposed_services, through: :procedures, source: :services
-  has_many :services
+  has_many :services, dependent: :destroy
   has_many :procedures
 end

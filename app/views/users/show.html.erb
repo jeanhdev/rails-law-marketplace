@@ -1,0 +1,21 @@
+<% if @user.job == 'justiciable' %>
+  <%= @user.first_name %>
+  <%= @user.last_name %>
+  <%= @user.email %>
+  <% else %>
+  <%= @user.first_name %>
+  <%= @user.last_name %>
+  <%= @user.email %>
+  <%= @user.job %>
+  <%= @user.specialty %>
+  <%= @user.address %>
+  <%= @user.description %>
+  <%= @user.experience %>
+<% end %>
+
+
+<p><%= link_to 'Update my profile', edit_user_path(@user), class: "btn btn-primary" %></p>
+
+<p><%= link_to 'Delete my profile', user_registration_path(current_user), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger" %></p>
+
+<!-- <p><%= link_to 'Delete my profile', user_registration_path(current_user), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger" %></p> -->

@@ -7,3 +7,4 @@ Rails.application.routes.draw do
     resources :procedures, except: [:destroy]
   end
 end
+

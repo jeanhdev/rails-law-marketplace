@@ -1,0 +1,22 @@
+<% if @user.job == 'justiciable' %>
+  <%= simple_form_for(@user) do |f| %>
+  <%= f.input :first_name %>
+  <%= f.input :last_name %>
+  <%= f.input :email %>
+  <%= f.submit 'Update profile', class: 'btn btn-primary' %>
+  <% end %>
+  <% else %>
+  <%= simple_form_for(@user) do |f| %>
+  <%= f.input :first_name %>
+  <%= f.input :last_name %>
+  <%= f.input :email %>
+  <%= f.input :address %>
+  <%= f.input :job %>
+  <%= f.input :experience %>
+  <%= f.input :specialty %>
+  <%= f.input :description %>
+  <%= f.submit 'Update profile', class: 'btn btn-primary' %>
+  <% end %>
+<% end %>
+
+
