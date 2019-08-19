@@ -9,6 +9,7 @@
     font-family: 'GTEestiDisplay-Medium',-apple-system,system-ui,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
     height: 500px;
     align-items: center;
+    margin-bottom: 100px;
 }
 
 .container > img {
@@ -27,12 +28,42 @@
     text-align: center;
 }
 
+
 .card {
-    width: 18rem;
-    height: 200px;
-    text-align: center;
+  width: 24rem;
+  padding: 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
-.card h6 {
-    padding: 20px;
+.card > img {
+  height: 200px;
+  width: 100%;
+  background-color: #D0D9F2;
+  object-fit: contain;
+}
+
+.card h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.footer {
+  margin-top: 50px;
+  margin-bottom: 30px;
+  text-align: center;
+  padding: 0px 50px;
+  color: rgba(0,0,0,0.3);
+}
+
+.footer-links a {
+  color: black;
+  opacity: 0.15;
+  text-decoration: none;
+  font-size: 24px;
+  padding: 0px 10px;
+}
+.footer-links a:hover {
+  opacity: 1;
 }
