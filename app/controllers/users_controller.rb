@@ -9,6 +9,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+    redirect_to root_path if current_user != @user
   end
 
   def edit_lawyer
@@ -24,7 +25,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      redirect_to user_path(@user)
+      redirect_to root_path
     else
       render :edit
     end
@@ -42,6 +43,6 @@ class UsersController < ApplicationController
   end
 
   def set_user
-    @user = User.find(params[:id])
+    @user = current_user
   end
 end
