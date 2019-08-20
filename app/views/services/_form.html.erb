@@ -6,7 +6,7 @@
     <%= f.input :title %>
     <%= f.input :description %>
     <%= f.input :duration %>
-    <%= f.input :category %>
+    <%= f.input :category, collection: Service::CATEGORIES %>
     <%= f.input :price %>
   </div>
 
