@@ -1,13 +1,16 @@
-<%= simple_form_for(@procedure) do |f| %>
-  <% if @procedure.errors.any? %>
-    <div class="errors-container">
-      <ul>
-        <% @procedure.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  <!-- [...] all the fields -->
-<% end %>
+<div class="container">
+  <%= simple_form_for(@procedure) do |f| %>
+    <% if @procedure.errors.any? %>
+      <div class="errors-container">
+        <ul>
+          <% @procedure.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <!-- [...] all the fields -->
+  <% end %>
+</div>
