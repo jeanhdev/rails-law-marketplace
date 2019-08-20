@@ -1,0 +1,18 @@
+
+<div class="container col-md-6">
+  <h3>Créer une procédure</h3>
+  <%= simple_form_for [@service, @procedure] do |f| %>
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+    <div class="form-inputs">
+      <%= f.input :date %>
+      <%= f.input :grievance %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit, class: "btn btn-primary"%>
+    </div>
+    <%= link_to 'Back', service_procedures_path(@service) %>
+  <% end %>
+</div>
