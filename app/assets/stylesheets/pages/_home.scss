@@ -5,11 +5,10 @@
     height: 75vh;
 }
 
-.container {
+.cards {
     font-family: 'GTEestiDisplay-Medium',-apple-system,system-ui,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
-    height: 500px;
+    height: 375px;
     align-items: center;
-    margin-bottom: 100px;
 }
 
 .container > img {
@@ -23,23 +22,14 @@
 }
 
 .choix {
-    margin-top: 50px;
-    margin-bottom: 50px;
-    text-align: center;
-}
-
-
-.card {
-  width: 24rem;
-  padding: 0 0;
-  overflow: hidden;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-top: 50px;
+  margin-bottom: 50px;
+  text-align: center;
 }
 
 .card > img {
-  height: 200px;
+  height: 100px;
   width: 100%;
-  background-color: #D0D9F2;
   object-fit: contain;
 }
 
@@ -49,21 +39,16 @@
   margin: 0;
 }
 
-.footer {
-  margin-top: 50px;
-  margin-bottom: 30px;
-  text-align: center;
-  padding: 0px 50px;
-  color: rgba(0,0,0,0.3);
+.rounded-4 {
+  border-radius: 5px;
 }
 
-.footer-links a {
-  color: black;
-  opacity: 0.15;
-  text-decoration: none;
-  font-size: 24px;
-  padding: 0px 10px;
+.rounded-top {
+  border-top-left-radius: 4px !important;
+  border-top-right-radius: 4px !important;
+  
 }
-.footer-links a:hover {
-  opacity: 1;
+
+.bg-blue {
+  background-color: #D0D9F2;
 }
