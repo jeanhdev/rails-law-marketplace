@@ -1,5 +1,6 @@
 <h1>Votre tableau de bord</h1>
 
+<div class="container">
 <% if @user.job == 'justiciable' %>
   <%= @user.first_name %>
   <%= @user.last_name %>
@@ -14,3 +15,20 @@
   <%= @user.description %>
   <%= @user.experience %>
 <% end %>
+</div>
+
+<div class="container">
+  <% if @services %>
+    <% @services.each do |service| %>
+      <%= service.title %>
+      <%= service.category %>
+      <%= service.description %>
+      <%= service.duration %>
+      <%= service.price %>
+    <% end %>
+  <% end %>
+</div>
+
+<div class="container">
+  <%= @procedures %>
+</div>
