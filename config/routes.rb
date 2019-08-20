@@ -11,4 +11,3 @@ Rails.application.routes.draw do
   get '/edit_lawyer', to: 'users#edit_lawyer', as: 'edit_lawyer'
 
 end
-
