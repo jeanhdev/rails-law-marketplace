@@ -1,35 +1,49 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to "#", class: "navbar-brand" do %>
-    <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
-    <% end %>
+<div class="cta d-flex" style="background-image: linear-gradient(to top,#cdd9f4,rgba(255,255,255,0))">
+	<div class="container d-flex">
+		<div id="tagline" class="align-self-center">
+			<h1>Rendez-justice.</h1>
+			<p>Matchez avec nos meilleurs avocats en profitants de notre réseau de professionnels qualifiés.</p>
+			<form class="form-inline">
+				<input class="form-control mr-sm-2 w-75 p-3" type="search" placeholder="Nom, profession..." />
+				<button class="btn btn-primary" type="submit">Rechercher</button>
+			</form>
+		</div>
+		<%= image_tag 'home-image.svg', class: 'align-self-center' %>
+	</div>
+</div>
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<div class="choix">
+	<h4>Choisissez votre prestation...</h4>
+</div>
 
+<div class="container">
+	<div class="card-deck mb-4">
+		<div class="card rounded-4">
+			<%= image_tag 'card-icon.svg', class: 'bg-blue rounded-top' %>
+			<h2 class="card-title text-center p-3">Divorce</h2>
+		</div>
+		<div class="card rounded-4">
+			<%= image_tag 'card-icon.svg', class: 'bg-blue rounded-top' %>
+			<h2 class="card-title text-center p-3">Pension alimentaire</h2>
+		</div>
+		<div class="card rounded-4">
+			<%= image_tag 'card-icon.svg', class: 'bg-blue rounded-top' %>
+			<h2 class="card-title text-center p-3">Stationnement</h2>
+		</div>
+	</div>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <% if user_signed_in? %>
-        <li class="nav-item active">
-          <%= link_to "Home", "#", class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Messages", "#", class: "nav-link" %>
-        </li>
-        <li class="nav-item dropdown">
-          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Action", "#", class: "dropdown-item" %>
-            <%= link_to "Another action", "#", class: "dropdown-item" %>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-          </div>
-        </li>
-      <% else %>
-        <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-        </li>
-      <% end %>
-    </ul>
-  </div>
+	<div class="card-deck">
+		<div class="card rounded-4">
+			<%= image_tag 'card-icon.svg', class: 'bg-blue rounded-top' %>
+			<h2 class="card-title text-center p-3">Licenciement</h2>
+		</div>
+		<div class="card rounded-4">
+			<%= image_tag 'card-icon.svg', class: 'bg-blue rounded-top' %>
+			<h2 class="card-title text-center p-3">Harcèlement</h2>
+		</div>
+		<div class="card rounded-4">
+			<%= image_tag 'card-icon.svg', class: 'bg-blue rounded-top' %>
+			<h2 class="card-title text-center p-3">Excès de vitesse</h2>
+		</div>
+	</div>
 </div>
