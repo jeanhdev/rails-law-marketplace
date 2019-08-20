@@ -1,13 +1,13 @@
-<div class="container">
+<div class="container mt-5 col-6 offset-3">
   <%= simple_form_for(@user) do |f| %>
-  <%= f.input :first_name %>
-  <%= f.input :last_name %>
-  <%= f.input :email %>
-  <%= f.input :address %>
-  <%= f.input :job, collection: User::JOBS %>
-  <%= f.input :experience %>
-  <%= f.input :specialty %>
-  <%= f.input :description %>
-  <%= f.submit 'Update my profile', class: 'btn btn-primary' %>
+  <%= f.input :first_name, :label => "Prénom" %>
+  <%= f.input :last_name, :label => "Nom" %>
+  <%= f.input :email, :label => "Email" %>
+  <%= f.input :address, :label => "Adresse" %>
+  <%= f.input :job, collection: User::JOBS, :label => "Rôle" %>
+  <%= f.input :experience, :label => "Expérience" %>
+  <%= f.input :specialty, :label => "Spécialité" %>
+  <%= f.input :description, :label => "Description" %>
+  <%= f.submit 'Mettre à jour mon profil', class: 'btn btn-primary' %>
   <% end %>
 </div>
