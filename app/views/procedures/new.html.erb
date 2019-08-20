@@ -1,13 +1,8 @@
 
+<div class="container">
+  <h1>Créer une nouvelle prestation</h1>
 
-<%= simple_form_for @procedure do |f| %>
-  <%= f.error_notification %>
+  <%= render 'form', procedure: @procedure %>
 
-  <%= f.input :date %>
-
-  <%= f.input :grievance %>
-
-  <%= f.button :submit, class: "btn-primary" %>
-  <%= f.button :button, "Cancel", type: "reset", class: "btn-outline-secondary" %>
-<% end %>
-
+  <%= link_to 'Back', service_procedures_path(@service) %>
+</div>
