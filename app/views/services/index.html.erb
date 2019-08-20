@@ -1,19 +1,23 @@
-<h1>Les procédures : </h1>
+<div class="container flexbox">
 
+  <h2>Prestations : </h2>
 
-<% @services.each do |service| %>
-  <tr>
-    <td><%= service.title %></td>
-    <td><%= service.category %></td>
-    <td><%= service.description %></td>
-    <td><%= service.duration %></td>
-    <td><%= service.price %></td>
-    <td><%= link_to 'Show', service %></td>
-    <% if service.user = current_user %>
-      <td><%= link_to 'Edit', edit_service_path(service) %></td>
-      <td><%= link_to 'Destroy', service, method: :delete, data: { confirm: 'Êtes vous sur de vouloir supprimer cette prestation?' } %></td>
-    <% end %>
-  </tr>
-<% end %>
+  <% @services.each do |service| %>
+    <div class="card">
+      <tr>
+        <td> <h4> <%= service.title %> </h4> </td>
+        <td><%= service.category %></td>
+        <td><%= service.description %></td>
+        <td><%= service.duration %></td>
+        <td><%= service.price %></td>
+        <td><%= link_to 'Show', service %></td>
+        <% if service.user = current_user %>
+          <td><%= link_to 'Edit', edit_service_path(service) %></td>
+          <td><%= link_to 'Destroy', service, method: :delete, data: { confirm: 'Êtes vous sur de vouloir supprimer cette prestation?' } %></td>
+        <% end %>
+      </tr>
+    </div>
+  <% end %>
 
-<%= link_to 'Nouvelle prestation', new_service_path %>
+  <%= link_to 'Nouvelle prestation', new_service_path %>
+</div>

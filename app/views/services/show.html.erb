@@ -1,24 +1,26 @@
-<h1>
-  <strong><%= @service.title %></strong>
+<div class="container">
+  <h1>
+    <strong><%= @service.title %></strong>
 
-</h1>
+  </h1>
 
-<p>
-  <strong><%= @service.category %></strong>
-</p>
+  <p>
+    <strong><%= @service.category %></strong>
+  </p>
 
-<p>
-  <strong><%= @service.description %></strong>
-</p>
+  <p>
+    <strong><%= @service.description %></strong>
+  </p>
 
-<p>
-  <strong><%= @service.duration %></strong>
-</p>
+  <p>
+    <strong><%= @service.duration %></strong>
+  </p>
 
-<p>
-  <strong><%= @service.price %></strong>
-</p>
+  <p>
+    <strong><%= @service.price %></strong>
+  </p>
 
 
-<%= link_to 'Edit', edit_service_path(@service) %> |
-<%= link_to 'Back', services_path %>
+  <%= link_to 'Edit', edit_service_path(@service) %> |
+  <%= link_to 'Back', services_path %>
+</div>
