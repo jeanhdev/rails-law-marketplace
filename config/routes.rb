@@ -6,9 +6,6 @@ Rails.application.routes.draw do
     resources :services
     resources :procedures, except: [:destroy]
   end
-
   get '/users/:id/edit_lawyer', to: 'users#edit_lawyer', as: 'edit_lawyer'
   patch '/users/:id/update_lawyer', to: 'users#update_lawyer'
-
 end
-
