@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'profile', to: 'dashboard#profile'
   root to: 'pages#home'
 
-  resources :users, only: [:show, :edit, :update, :delete]
+  resources :users, only: [:edit, :update]
   resources :services do
     resources :procedures, except: [:destroy]
   end

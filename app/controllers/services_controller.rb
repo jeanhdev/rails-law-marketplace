@@ -16,7 +16,7 @@ class ServicesController < ApplicationController
     @service = Service.new(service_params)
     @service.user = current_user
     if @service.save
-      redirect_to service_path(current_user), notice: 'Votre prestation a bien été créé.'
+      redirect_to service_path(@service), notice: 'Votre prestation a bien été créé.'
     else
       render 'new'
     end
