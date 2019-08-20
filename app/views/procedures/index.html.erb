@@ -1,9 +1,13 @@
 <div class="container">
-<h1>Mes procédures</h1>
+<h2>Mes procédures</h2>
 <% @procedures.each do |procedure| %>
-  <h2><%= procedure.service.title %></h2>
-  <p><%= procedure.status %></p>
+  <ul><li>
+  <h4><%= procedure.service.title %></h4>
+  <p><%= procedure.status%></p>
   <p><%= procedure.grievance %></p>
+  <p><%= procedure.date %></p>
   <p><%= procedure.user.last_name %></p>
+  </li></ul>
 <% end %>
+  <%= link_to 'nouvelle procédure', new_service_procedure_path %>
 </div>
