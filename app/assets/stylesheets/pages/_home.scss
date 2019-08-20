@@ -46,3 +46,15 @@
 .bg-blue {
   background-color: #D0D9F2;
 }
+
+.card {
+  transition: all ease 0.2s;
+  &:hover {
+    transform: scale(1.02);
+    transition: all ease 0.2s;
+  }
+}
+
+.full-page {
+  min-height: calc(100vh - 96.66px);
+}
