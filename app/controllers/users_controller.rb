@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:dashboard, :show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :edit, :update, :destroy, :edit_lawyer, :update_lawyer]
 
   def dashboard
     # ajouter procedures et services liees à l'user id
@@ -9,6 +9,17 @@ class UsersController < ApplicationController
   end
 
   def edit
+  end
+
+  def edit_lawyer
+  end
+
+  def update_lawyer
+    if @user.update(user_params)
+      redirect_to user_path(@user)
+    else
+      render :edit_lawyer
+    end
   end
 
   def update
