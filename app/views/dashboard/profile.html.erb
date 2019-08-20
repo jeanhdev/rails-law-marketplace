@@ -1,0 +1,16 @@
+<h1>Votre tableau de bord</h1>
+
+<% if @user.job == 'justiciable' %>
+  <%= @user.first_name %>
+  <%= @user.last_name %>
+  <%= @user.email %>
+  <% else %>
+  <%= @user.first_name %>
+  <%= @user.last_name %>
+  <%= @user.email %>
+  <%= @user.job %>
+  <%= @user.specialty %>
+  <%= @user.address %>
+  <%= @user.description %>
+  <%= @user.experience %>
+<% end %>
