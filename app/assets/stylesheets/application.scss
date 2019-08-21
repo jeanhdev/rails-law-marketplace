@@ -11,3 +11,28 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+.card{
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.card-haut {
+  height: 120px;
+  border: 1px solid red;
+  align-items: center;
+}
+.card-price-category-duration{
+  border: 1px solid green;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+}
+
+.card-description{
+  height: 80px;
+}
+
+.card-tags{
+  height: 30px;
+}

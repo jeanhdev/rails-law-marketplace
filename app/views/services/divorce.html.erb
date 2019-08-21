@@ -1,0 +1,64 @@
+
+<div class="container flexbox">
+
+  <h2>Avocats spécialisés en divorce </h2>
+
+  <% @services.each do |service| %>
+
+  <!-- <div class="card mb-3" style="max-width: 1000px;">
+
+  <div class="row no-gutters">
+
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title"> Maître <%= service.user.first_name %> <%= service.user.last_name %></h5>
+        <p class="card-text"><%= service.category %></p>
+        <p class="card-text"><%= service.description %></p>
+        <p class="card-text"><%= service.duration %> semaines</p>
+        <p class="card-text"><%= service.price %> € </p>
+        <p class="card-text"><small class="text-muted">Droit civil Droit de la famille Divorce More </small></p>
+      </div>
+    </div>
+  </div>
+  <%= link_to 'Show', service %>
+</div> -->
+
+
+<div class="card mb-3" style="max-width: 1000px;">
+
+  <div class="card-haut d-flex justify-content-between">
+    <div class="card-avatar-name d-flex">
+      <img src="..." class="rounded-circle" alt="...">
+      <p class="card-text">Maître <%= service.user.first_name %> <%= service.user.last_name %> <br> Avocat à la Cour de Paris</p>
+    </div>
+
+    <div class="card-btn d-flex">
+      <button type="button" class="btn btn-primary mr-3">Voir profil</button>
+      <button type="button" class="btn btn-outline-primary mr-2">Prendre RDV</button>
+    </div>
+  </div>
+
+  <div class="card-price-category-duration d-flex">
+    <p class="card-text"><strong><%= service.category %></strong></p>
+    <p class="card-text"><strong>Paris</strong></p>
+    <p class="card-text"><strong><%= service.duration %> semaines</strong></p>
+    <p class="card-text"><strong><%= service.price %> € </strong></p>
+  </div>
+
+  <div class="card-description">
+    <p class="card-text"><%= service.description %></p>
+  </div>
+
+  <div class="card-tags">
+    <a href="#" class="badge badge-primary">Droit pénal</a>
+    <a href="#" class="badge badge-secondary">Droit de la famille</a>
+    <a href="#" class="badge badge-light">Droit fiscal</a>`
+  </div>
+
+</div>
+
+
+
+
+  <% end %>
+</div>
