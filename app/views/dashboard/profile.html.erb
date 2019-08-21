@@ -2,6 +2,11 @@
 
 <div class="container">
 	<div class="row">
+
+    <div class="procedures-subblock col-md-7">
+      <%= @procedures %>
+    </div>
+
 		<div class="profile-block col-md-5">
 			<div class="card-product">
 				<%= image_tag "saul.jpg", class:"lawyer-avatar"%>
@@ -18,14 +23,10 @@
 				</div>
 			</div>
 		</div>
-	</div>
 
-  <div class="row">
-    <div class="procedures-subblock col-md-7">
-      <%= @procedures %>
-    </div>
 
-    <div class="services-subblock col-md-5">
+
+    <div class="services-subblock col-md-5 offset-md-7">
       <% if @services %>
       <div class="card">
         <div class="card-header">
