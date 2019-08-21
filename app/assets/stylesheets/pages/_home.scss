@@ -1,4 +1,5 @@
-// Specific CSS for your home-page
+
+
 .cta {
     background-position: center;
     background-size: cover; 
@@ -47,7 +48,7 @@
   background-color: #D0D9F2;
 }
 
-.card {
+.card-pop {
   transition: all ease 0.2s;
   &:hover {
     transform: scale(1.02);
@@ -56,5 +57,5 @@
 }
 
 .full-page {
-  min-height: calc(100vh - 96.66px);
+  min-height: calc(100vh - 98.2px);
 }
