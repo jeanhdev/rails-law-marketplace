@@ -10,4 +10,6 @@ Rails.application.routes.draw do
 
   get '/edit_lawyer', to: 'users#edit_lawyer', as: 'edit_lawyer'
 
+  get '/service_divorce', to: 'services#divorce', as: 'service_divorce'
+
 end
