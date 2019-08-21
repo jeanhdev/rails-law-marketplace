@@ -22,18 +22,37 @@
   </div>
 
   <div class="row">
-    <div class="procedures-subblock col-md-8">
+    <div class="procedures-subblock col-md-7">
       <%= @procedures %>
     </div>
 
-    <div class="services-subblock col-md-4">
+    <div class="services-subblock col-md-5">
       <% if @services %>
-        <% @services.each do |service| %>
-          <%= service.title %>
-          <%= service.category %>
-          <%= service.duration %>
-          <%= service.price %>
-        <% end %>
+      <div class="card">
+        <div class="card-header">
+            Vos prestations :
+        </div>
+          <% @services.each do |service| %>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <div class="d-flex justify-content-between">
+                <div>
+                  <h6><%= service.title %></h6>
+                  <p><small><%= service.category %></small></p>
+                </div>
+                <div>
+                  <h6><%= service.duration %> semaines</h6>
+                  <h6><%= service.price %>€</h6>
+                </div>
+              </div>
+              <%= link_to 'Edit', edit_service_path(service) %>
+              <%= link_to 'Destroy', service, method: :delete, data: { confirm: 'Êtes vous sur de vouloir supprimer cette prestation?' } %>
+            </li>
+          </ul>
+          <% end %>
+            <li class="list-group-item"><%= link_to 'Nouvelle prestation', new_service_path %>
+            </li>
+      </div>
       <% end %>
     </div>
   </div>
