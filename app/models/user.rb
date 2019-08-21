@@ -16,5 +16,5 @@ class User < ApplicationRecord
 
   # has_many :proposed_services, through: :procedures, source: :services
   has_many :services, dependent: :destroy
-  has_many :procedures
+  has_many :procedures, dependent: :destroy
 end

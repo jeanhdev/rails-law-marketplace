@@ -1,12 +1,12 @@
 
-<div class="container flexbox">
+<div class="container col-md-8">
 
   <h2>Avocats spécialisés en divorce </h2>
 
   <form class="form-inline mb-3 search-divorce">
     <input class="form-control" type="search" placeholder="Divorce">
     <button class="btn btn-primary" type="submit">Rechercher</button>
-    <button type="button" class="btn btn-outline-primary"><i class="fas fa-sliders-h"></i> Filtres</button>
+    <button type="button" class="btn btn-outline-secondary"><i class="fas fa-sliders-h"></i> Filtres</button>
   </form>
 
   <div class="card mb-3">
@@ -20,8 +20,8 @@
     <div class="card-btn d-flex">
       <!-- <button type="button" class="btn btn-primary mr-3">Voir profil</button>
       <button type="button" class="btn btn-outline-primary mr-2">Prendre RDV</button> -->
-      <%= link_to 'Voir profil', profile_saul_path, class: "btn btn-primary mr-3" %>
-      <%= link_to 'Prendre RDV', new_service_procedure_path(@services.first), class: "btn btn-outline-primary mr-2" %>
+      <%= link_to 'En savoir plus', profile_saul_path, class: "btn btn-primary mr-3" %>
+      <%= link_to "Contacter l'avocat", new_service_procedure_path(@services.first), class: "btn btn-outline-primary mr-2" %>
     </div>
   </div>
 
@@ -39,11 +39,10 @@
   <div class="card-tags">
     <a href="#" class="badge badge-primary">Droit pénal</a>
     <a href="#" class="badge badge-secondary">Droit de la famille</a>
-    <a href="#" class="badge badge-light">Droit fiscal</a>`
+    <a href="#" class="badge badge-light">Droit fiscal</a>
   </div>
 
 </div>
-
 
 <% @services.each do |service| %>
 
@@ -51,36 +50,36 @@
 
   <div class="card-haut d-flex justify-content-between">
     <div class="card-avatar-name d-flex">
-      <p class="card-text pl-5"><span>Maître <%= service.user.first_name %> <%= service.user.last_name %></span> <br> Avocat à la Cour de Paris</p>
+      <%= image_tag(service.user.avatar, class: "rounded-circle", width:"100px", height:"100px") %>
+      <p class="card-text pl-5"><span>Maître <%= service.user.first_name %> <%= service.user.last_name %></span> <br>📍<%= service.user.address %></p>
     </div>
 
     <div class="card-btn d-flex">
-      <%= link_to 'Voir profil', service_path(service), class: "btn btn-primary mr-3" %>
-      <%= link_to 'Prendre RDV', new_service_procedure_path(service), class: "btn btn-outline-primary mr-2" %>
+      <%= link_to 'En savoir plus', service_path(service), class: "btn btn-primary mr-3" %>
+      <%= link_to "Contacter l'avocat", new_service_procedure_path(service), class: "btn btn-outline-primary mr-2" %>
     </div>
   </div>
 
   <div class="card-price-category-duration d-flex">
-    <p class="card-text"><strong><%= service.category %></strong></p>
-    <p class="card-text"><strong>Paris</strong></p>
-    <p class="card-text"><strong><%= service.duration %> semaines</strong></p>
-    <p class="card-text"><strong><%= service.price %> € </strong></p>
+    <p class="card-text"><strong>Spécialité: </strong>Droit de la famille</p>
+    <p class="card-text"><strong>Durée: </strong><%= service.duration %> semaine(s)</p>
+    <p class="card-text"><strong>Tarif: </strong><%= service.price %> € <small>Tout compris</small></p>
   </div>
-
+  <div class="card-description">
+    <p class="card-text"><strong>Procédure: </strong><%= service.title %></p>
+  </div>
+  <hr>
   <div class="card-description">
     <p class="card-text"><%= service.description %></p>
   </div>
-
+  <hr>
   <div class="card-tags">
     <a href="#" class="badge badge-primary">Droit pénal</a>
     <a href="#" class="badge badge-secondary">Droit de la famille</a>
-    <a href="#" class="badge badge-light">Droit fiscal</a>`
+    <a href="#" class="badge badge-light">Droit fiscal</a>
   </div>
 
 </div>
-
-
-
 
   <% end %>
 </div>
