@@ -2,24 +2,7 @@
 
 <div class="container">
 	<div class="row">
-		<div class="profile-block col-md-5">
-			<div class="card-product fixxed">
-				<%= image_tag "saul.jpg", class:"lawyer-avatar"%>
-				<div class="card-product-infos">
-					<h3>Saul Goodman</h3>
-					<p>Avocat chez<strong>Saul Goodman & Associates.</strong></p>
-					<div class="d-flex">
-						<p><%= image_tag "location.svg", class:"location" %> Albuquerque, Nouveau Mexique</p>
-					</div>
-					<a href="#" class="badge badge-primary">Droit pénal</a>
-					<a href="#" class="badge badge-secondary">Droit de la famille</a>
-					<a href="#" class="badge badge-light">Droit fiscal</a>
-				</div>
-			</div>
-		</div>
-	</div>
 
-	<div class="row">
 		<div class="procedures-subblock col-md-7">
 			<div class="card">
 				<div class="card-header text-center"><h4>Procédures</h4></div>
@@ -37,4 +20,51 @@
 			</div>
 		</div>
 	</div>
+
+		<div class="profile-block col-md-5">
+			<div class="card-product fixxed">
+				<%= image_tag "saul.jpg", class:"lawyer-avatar"%>
+				<div class="card-product-infos">
+					<h3>Saul Goodman</h3>
+					<p>Avocat chez<strong>Saul Goodman & Associates.</strong></p>
+					<div class="d-flex">
+						<p><%= image_tag "location.svg", class:"location" %> Albuquerque, Nouveau Mexique</p>
+					</div>
+					<a href="#" class="badge badge-primary">Droit pénal</a>
+					<a href="#" class="badge badge-secondary">Droit de la famille</a>
+					<a href="#" class="badge badge-light">Droit fiscal</a>
+				</div>
+			</div>
+		</div>
+
+    <div class="services-subblock col-md-5 offset-md-7">
+      <% if @services %>
+      <div class="card">
+        <div class="card-header">
+            Vos prestations :
+        </div>
+          <% @services.each do |service| %>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <div class="d-flex justify-content-between">
+                <div>
+                  <h6><%= service.title %></h6>
+                  <p><small><%= service.category %></small></p>
+                </div>
+                <div>
+                  <h6><%= service.duration %> semaines</h6>
+                  <h6><%= service.price %>€</h6>
+                </div>
+              </div>
+              <%= link_to 'Edit', edit_service_path(service) %>
+              <%= link_to 'Destroy', service, method: :delete, data: { confirm: 'Êtes vous sur de vouloir supprimer cette prestation?' } %>
+            </li>
+          </ul>
+          <% end %>
+            <li class="list-group-item"><%= link_to 'Nouvelle prestation', new_service_path %>
+            </li>
+      </div>
+      <% end %>
+    </div>
+  </div>
 </div>
