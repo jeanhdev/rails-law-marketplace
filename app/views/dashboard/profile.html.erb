@@ -1,34 +1,41 @@
-<h1>Votre tableau de bord</h1>
+<center><h2>Votre tableau de bord</h2></center>
 
 <div class="container">
-<% if @user.job == 'justiciable' %>
-  <%= @user.first_name %>
-  <%= @user.last_name %>
-  <%= @user.email %>
-  <% else %>
-  <%= @user.first_name %>
-  <%= @user.last_name %>
-  <%= @user.email %>
-  <%= @user.job %>
-  <%= @user.specialty %>
-  <%= @user.address %>
-  <%= @user.description %>
-  <%= @user.experience %>
-<% end %>
-</div>
+  <div class="row">
+    <div class="profile-block col-md-12">
+      <h3 class="">Profil</h3>
+      <% if @user.job == 'justiciable' %>
+        <%= @user.first_name %>
+        <%= @user.last_name %>
+        <%= @user.email %>
+      <% else %>
+        <%= @user.first_name %>
+        <%= @user.last_name %>
+        <%= @user.email %>
+        <%= @user.job %>
+        <%= @user.specialty %>
+        <%= @user.address %>
+        <%= @user.description %>
+        <%= @user.experience %>
+      <% end %>
+    </div>
+  </div>
 
-<div class="container">
-  <% if @services %>
-    <% @services.each do |service| %>
-      <%= service.title %>
-      <%= service.category %>
-      <%= service.description %>
-      <%= service.duration %>
-      <%= service.price %>
-    <% end %>
-  <% end %>
-</div>
+  <div class="row">
+    <div class="procedures-subblock col-md-8">
+      <%#= @procedures %>
+    </div>
 
-<div class="container">
-  <%= @procedures %>
+    <div class="services-subblock col-md-4">
+      <% if @services %>
+        <% @services.each do |service| %>
+          <%= service.title %>
+          <%= service.category %>
+          <%= service.description %>
+          <%= service.duration %>
+          <%= service.price %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
 </div>
