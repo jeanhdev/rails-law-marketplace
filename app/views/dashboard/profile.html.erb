@@ -27,7 +27,9 @@
 						<div class="card-header padding-zero">En attente</div>
 						<ul class="list-group list-group-flush">
               <% @procedures.each do |procedure| %>
-                <li class="list-group-item"><%= procedure.service.title %></li>
+                <% if  %>
+                  <li class="list-group-item"><%= procedure.service.title %> | <%= procedure.date %></li>
+                <% end %>
 							<% end %>
 						</ul>
 					</div>
