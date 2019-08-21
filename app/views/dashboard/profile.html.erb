@@ -6,18 +6,65 @@
 			<div class="card">
 				<div class="card-header text-center"><h4>Procédures</h4></div>
 				<div class="card-body">
-						<div class="card-header padding-zero">En attente</div>
-						<ul class="list-group list-group-flush">
-              <% @procedures.each do |procedure| %>
-                <% if  %>
-                  <li class="list-group-item"><%= procedure.service.title %> | <%= procedure.date %></li>
-                <% end %>
-							<% end %>
-						</ul>
-					</div>
+          <% @procedures.each do |procedure| %>
+            <% if procedure.status == "pending" %>
+              <div class="card-header padding-zero">En attente</div>
+						    <ul class="list-group list-group-flush">
+                  <li class="list-group-item list-procedure"><%= procedure.service.title %> | <%= procedure.date %> 
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Détails</button>
+                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalCenterTitle"><%= procedure.service.title %></h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            <%= procedure.grievance %>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-primary">Accepter</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Refuser</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+            <% elsif procedure.status == "not pending" %>
+              <div class="card-header padding-zero">En cours</div>
+						  <ul class="list-group list-group-flush">
+                <li class="list-group-item list-procedure"><%= procedure.service.title %> | <%= procedure.date %>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Détails</button>
+                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalCenterTitle"><%= procedure.service.title %></h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            <%= procedure.grievance %>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+              </ul>
+            <% end %>
+					<% end %>
 				</div>
+			</div>
 		</div>
-    <div class="profile-block col-md-5">
+    <div class="col-md-5">
+      <div class="profile-block mb-4">
 			<div class="card-product fixxed">
 				<%= image_tag "saul.jpg", class:"lawyer-avatar"%>
 				<div class="card-product-infos">
@@ -31,8 +78,8 @@
 					<a href="#" class="badge badge-light">Droit fiscal</a>
 				</div>
 			</div>
-		</div>
-    <div class="services-subblock col-md-5 offset-md-7">
+		  </div>
+      <div class="services-subblock">
       <% if @services %>
       <div class="card">
         <div class="card-header">
@@ -60,5 +107,6 @@
             </li>
       </div>
       <% end %>
+      </div>
     </div>
 </div>
