@@ -5,6 +5,10 @@ class ServicesController < ApplicationController
     @services = Service.all
   end
 
+  def divorce
+    @services = Service.all
+  end
+
   def show
   end
 
