@@ -12,4 +12,6 @@ Rails.application.routes.draw do
 
   get '/service_divorce', to: 'services#divorce', as: 'service_divorce'
 
+  get '/profile_saul', to: 'services#profile_saul', as: 'profile_saul'
+
 end

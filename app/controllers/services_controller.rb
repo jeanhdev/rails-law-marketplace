@@ -12,6 +12,9 @@ class ServicesController < ApplicationController
   def show
   end
 
+  def profile_saul
+  end
+
   def new
     @service = Service.new
   end

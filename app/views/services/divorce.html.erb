@@ -20,7 +20,7 @@
     <div class="card-btn d-flex">
       <!-- <button type="button" class="btn btn-primary mr-3">Voir profil</button>
       <button type="button" class="btn btn-outline-primary mr-2">Prendre RDV</button> -->
-      <%= link_to 'Voir profil', service_path(@services.first), class: "btn btn-primary mr-3" %>
+      <%= link_to 'Voir profil', profile_saul_path, class: "btn btn-primary mr-3" %>
       <%= link_to 'Prendre RDV', new_service_procedure_path(@services.first), class: "btn btn-outline-primary mr-2" %>
     </div>
   </div>
@@ -33,7 +33,7 @@
   </div>
 
   <div class="card-description">
-    <p class="card-text"></p>
+    <p class="card-text">Don't want to go to jail ? Better call Saul !!</p>
   </div>
 
   <div class="card-tags">
@@ -51,7 +51,7 @@
 
   <div class="card-haut d-flex justify-content-between">
     <div class="card-avatar-name d-flex">
-
+      <%= image_tag(service.user.avatar, class: "rounded-circle", width:"100px", height:"100px") %>
       <p class="card-text pl-5"><span>Maître <%= service.user.first_name %> <%= service.user.last_name %></span> <br> Avocat à la Cour de Paris</p>
     </div>
 
