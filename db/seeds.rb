@@ -83,7 +83,7 @@ puts '----------------------------------'
     experience: rand(1..15),
     email:      Faker::Internet.email,
     address:    Faker::Address.country,
-    avatar:     Faker::LoremPixel.image,
+    avatar:     Faker::Avatar.image,
     password:   '123456'
   )
 
