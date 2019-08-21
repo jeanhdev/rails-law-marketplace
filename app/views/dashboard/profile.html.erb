@@ -2,9 +2,11 @@
 
 <div class="container">
 	<div class="row">
+
 		<div class="procedures-subblock col-md-7">
 			<div class="card">
-				<div class="card-header text-center"><h4>Procédures</h4></div>
+				<div class="card-header text-center"><h4>Procédures</h4>
+        </div>
 				<div class="card-body">
           <% @procedures.each do |procedure| %>
             <% if procedure.status == "pending" %>
@@ -105,8 +107,12 @@
           <% end %>
             <li class="list-group-item"><%= link_to 'Nouvelle prestation', new_service_path %>
             </li>
-      </div>
+        </div>
       <% end %>
       </div>
     </div>
+    </div>
+
+
+  </div>
 </div>
