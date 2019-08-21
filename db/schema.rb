@@ -10,15 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_20_141627) do
+ActiveRecord::Schema.define(version: 2019_08_21_130927) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "procedures", force: :cascade do |t|
     t.string "date"
-    t.string "status"
-    t.string "grievance"
+    t.string "status", default: "pending"
+    t.text "grievance"
     t.bigint "user_id"
     t.bigint "service_id"
     t.datetime "created_at", null: false
