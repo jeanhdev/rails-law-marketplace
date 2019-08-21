@@ -1,26 +1,49 @@
 <div class="container">
-  <h1>
-    <strong><%= @service.title %></strong>
-
-  </h1>
-
-  <p>
-    <strong><%= @service.category %></strong>
-  </p>
-
-  <p>
-    <strong><%= @service.description %></strong>
-  </p>
-
-  <p>
-    <strong><%= @service.duration %></strong>
-  </p>
-
-  <p>
-    <strong><%= @service.price %></strong>
-  </p>
-
-
-  <%= link_to 'Edit', edit_service_path(@service) %> |
-  <%= link_to 'Back', services_path %>
+  <div class="row">
+    <div class="col-8 p-5 section-1">
+      <div class="row d-flex profile">
+        <%= image_tag(@service.user.avatar)%>
+        <div class="pl-4">
+          <small>Avocat à la cour</small>
+          <h2><strong>Maître <%= @service.user.last_name %> </strong></h2>
+          <p><strong>Spécialité: </strong><%= @service.category %></p>
+          <p><strong>Votes: </strong>⭐️⭐️⭐️⭐️ (250 votes)</p>
+          <p><strong>Durée procédure: </strong><%= @service.duration %> semaine(s)</p>
+          <p><strong>Tarif (tout compris): </strong><%= @service.price %> €</p>
+        </div>
+      </div>
+      <hr>
+      <div class='section-2'>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <br>
+        <h3>Détails la procédure</h3>
+          <p> <%= @service.description %> </p>
+        <br>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class='booking'>
+        <div class="form-inputs">
+          <div class="form-group">
+            <form>
+              <div class="title">
+                <h3>Réglez votre litige</h3>
+                <small>Divorce par consentement mutuel</small>
+							</div>
+              <label class="mb-1" for="formGroupExampleInput">Nom</label>
+              <input type="text" class="form-control mb-3" id="formGroupExampleInput" placeholder="">
+              <label class="mb-1" for="formGroupExampleInput">Email</label>
+              <input type="text" class="form-control mb-3" id="formGroupExampleInput" placeholder="">
+              <label class="mb-1" for="formGroupExampleInput">Téléphone</label>
+              <input type="text" class="form-control mb-3" id="formGroupExampleInput" placeholder="">
+              <label class="mb-1" for="exampleFormControlTextarea1">Décrivez votre litige: </label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+              <hr>
+              <%= link_to 'Démarrer cette procédure', profile_path, class: 'btn_1 full-width'%>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
