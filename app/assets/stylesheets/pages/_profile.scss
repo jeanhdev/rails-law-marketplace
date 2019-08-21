@@ -1,27 +1,37 @@
+center {
+  padding-top: 10px;
+}
+.profile-block {
+  height: 20vh;
+}
+
 .card-product {
   overflow: hidden;
-  height: 120px;
+  height: 150px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
-  align-items: center;
+  border-radius: 5px;
 }
 
-
-.card-product h5 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
+.lawyer-avatar {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
 }
 
 .card-product p {
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.4;
   opacity: .7;
-  margin-bottom: 0;
+  margin-bottom: 5px;
   margin-top: 8px;
 }
 
 .card-product .card-product-infos {
   padding: 16px;
+}
+
+.location {
+  height: 15px;
 }
