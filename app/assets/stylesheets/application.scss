@@ -11,12 +11,3 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
-
-@font-face {
-  font-family: "Circular";
-  src:font-url("circular-book.otf")
-}
-
-body {
-  font-family: "Circular";
-}
