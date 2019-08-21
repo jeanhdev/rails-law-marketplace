@@ -8,6 +8,7 @@ center {
 .card-product {
   overflow: hidden;
   height: 150px;
+  // TODO : PROBLEM
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
@@ -34,4 +35,12 @@ center {
 
 .location {
   height: 15px;
+}
+
+.card-body {
+  padding: 0;
+}
+
+.padding-zero {
+  padding: 0;
 }
