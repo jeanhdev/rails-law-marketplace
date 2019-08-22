@@ -82,8 +82,8 @@ puts '----------------------------------'
     job:        'avocat',
     experience: rand(1..15),
     email:      Faker::Internet.email,
-    address:    Faker::Address.country,
-    avatar:     Faker::Avatar.image,
+    address:    Faker::Address.city,
+    avatar:     'https://cdn3.iconfinder.com/data/icons/business-avatar-1/512/10_avatar-512.png',
     password:   '123456'
   )
 
