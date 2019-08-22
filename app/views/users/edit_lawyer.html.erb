@@ -1,14 +1,15 @@
 <div class="container mt-5 col-6 offset-3">
-  <%= simple_form_for(@user, url: profile_path, method: :get) do |f| %>
+  <%= simple_form_for(@user) do |f| %>
   <%= f.input :avatar %>
   <%= f.input :avatar_cache, as: :hidden %>
   <%= f.input :first_name, :label => "Prénom" %>
   <%= f.input :last_name, :label => "Nom" %>
   <%= f.input :email, :label => "Email" %>
-  <%= f.input :address, :label => "Adresse" %>
+  <%= f.input :address, :label => "Ville" %>
+  <%= f.input :firm, :label => "Entreprise" %>
   <%= f.input :job, collection: User::JOBS, :label => "Rôle" %>
   <%= f.input :experience, :label => "Expérience" %>
-  <%= f.input :specialty, :label => "Spécialité" %>
+  <%= f.input :specialty, :label => "Spécialité(s) (séparer par une virgule)" %>
   <%= f.input :description, :label => "Description" %>
   <%= f.submit 'Mettre à jour mon profil', class: 'btn btn-primary' %>
   <% end %>
