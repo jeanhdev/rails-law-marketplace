@@ -25,6 +25,8 @@
       <%= f.input :password_confirmation,
                   required: false,
                   input_html: { autocomplete: "new-password" } %>
+  <% end %>
+    <%= simple_form_for(@user) do |f| %>
       <h3>Informations perso 👨🏻‍💻</h3>
       <%= f.input :avatar %>
       <%= f.input :avatar_cache, as: :hidden %>
