@@ -36,7 +36,9 @@
 			<li class="nav-item dropdown">
 					<% if current_user.specialty.nil? %>
 						<%= link_to "Avocat?", edit_lawyer_path, class: "dropdown-item" %> 
-					<% end %> <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+					<% end %> 
+					<%= link_to "Edit profile", edit_lawyer_path, class: "dropdown-item" %>
+					<%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
 			</li>
 			<% else %>
 			<li class="nav-item">
