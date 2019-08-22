@@ -7,11 +7,11 @@ class User < ApplicationRecord
   # validates :first_name, presence: true
   # validates :last_name, presence: true
   # validates :avatar, presence: true
-
+  mount_uploader :avatar, PhotoUploader
   # verifier que cette ligne pour l'avatar est utile
   # has_attachment :avatar
 
-  JOBS = ['Avocat', 'Notaire', 'Huissier', 'Juriste', 'Justiciable']
+  JOBS = ['Avocat', 'Notaire', 'Huissier', 'Juriste']
   # validates :job, inclusion: { in: JOBS }
 
   # has_many :proposed_services, through: :procedures, source: :services

@@ -1,5 +1,4 @@
 <center><h2>Votre tableau de bord</h2></center>
-
 <div class="container">
 	<div class="row">
 
@@ -8,17 +7,18 @@
 				<div class="card-header text-center"><h4>Procédures</h4>
         </div>
 				<div class="card-body">
-          <% @procedures.each do |procedure| %>
-            <% if procedure.status == "pending" %>
-              <div class="card-header padding-zero">En attente</div>
+          <div class="card-header padding-zero">En attente</div>
+            <% @procedures.each do |procedure| %>
+              <% if procedure.status == "pending" %>
 						    <ul class="list-group list-group-flush">
-                  <li class="list-group-item list-procedure"><%= procedure.service.title %> | <%= procedure.date %> 
+                  <li class="list-group-item list-procedure"><%= procedure.service.title %> | <%= procedure.date %>
                   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Détails</button>
                     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+
                       <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
                           <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalCenterTitle"><%= procedure.service.title %></h5>
+                            <h5 class="modal-title" id="Modal-<%= procedure.id %>Label"><%= procedure.service.title %></h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                               <span aria-hidden="true">&times;</span>
                             </button>
@@ -27,66 +27,77 @@
                             <%= procedure.grievance %>
                           </div>
                           <div class="modal-footer">
-                            <button type="button" class="btn btn-primary">Accepter</button>
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Refuser</button>
+                            <%= link_to "Refuser", refuse_path(procedure), method: :patch, class: "btn btn-outline-danger" %>
+                            <%= link_to "Accepter", accept_path(procedure), method: :patch, class: "btn btn-outline-success" %>
                           </div>
                         </div>
                       </div>
                     </div>
                   </li>
                 </ul>
-            <% elsif procedure.status == "not pending" %>
-              <div class="card-header padding-zero">En cours</div>
-						  <ul class="list-group list-group-flush">
-                <li class="list-group-item list-procedure"><%= procedure.service.title %> | <%= procedure.date %>
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Détails</button>
-                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                      <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalCenterTitle"><%= procedure.service.title %></h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                              <span aria-hidden="true">&times;</span>
-                            </button>
-                          </div>
-                          <div class="modal-body">
-                            <%= procedure.grievance %>
-                          </div>
-                          <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+              <% end %>
+            <% end %>
+
+          <div class="card-header padding-zero">En cours</div>
+              <% @procedures.each do |procedure| %>
+                <% if procedure.status == "accepted" %>
+    						  <ul class="list-group list-group-flush">
+                    <li class="list-group-item list-procedure"><%= procedure.service.title %> | <%= procedure.date %>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ProcedureModal<%= procedure.id %>">Détails</button>
+                      <div class="modal fade" id="ProcedureModal<%= procedure.id %>" tabindex="-1" role="dialog" aria-labelledby="ProcedureModal-<%= procedure.id %>" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="ProcedureModal-<%= procedure.id %>"><%= procedure.service.title %></h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              <%= procedure.grievance %>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer
+                              </button>
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                  </li>
-              </ul>
-            <% end %>
-					<% end %>
-				</div>
+                    </li>
+                  </ul>
+                <% end %>
+					    <% end %>
+				    </div>
 			</div>
 		</div>
+
     <div class="col-md-5">
       <div class="profile-block mb-4">
 			<div class="card-product fixxed">
-				<%= image_tag "saul.jpg", class:"lawyer-avatar"%>
+				<%= cl_image_tag @user.avatar, class:"lawyer-avatar"%>
 				<div class="card-product-infos">
-					<h3>Saul Goodman</h3>
-					<p>Avocat chez <strong>Saul Goodman & Associates.</strong></p>
+          <% if (@user.first_name.blank? && @user.last_name.blank?) %>
+            <h6> <strong>Missing name</strong> 👉🏼 <%= link_to "Edit Profile", edit_lawyer_path %></h6>
+          <% else  %>
+					  <div class="d-flex justify-content-between">
+              <h3 class="mr-4"><%= @user.first_name %> <%= @user.last_name %></h3>
+              <p><%= link_to "Edit Profile", edit_lawyer_path %></p>
+            </div>
+          <% end %>
+					<p><%= @user.job %> chez <strong><%= @user.firm %></strong></p>
 					<div class="d-flex">
-						<p><%= image_tag "location.svg", class:"location" %> Albuquerque, Nouveau Mexique</p>
+						<p><%= image_tag "location.svg", class:"location" %> <%= @user.address %></p>
 					</div>
-					<a href="#" class="badge badge-primary">Droit pénal</a>
-					<a href="#" class="badge badge-secondary">Droit de la famille</a>
-					<a href="#" class="badge badge-light">Droit fiscal</a>
+          <% @user.specialty.split(",").each do |special| %>
+					  <a href="#" class="badge badge-primary"><%= special %></a>
+          <% end %>
 				</div>
 			</div>
 		  </div>
       <div class="services-subblock">
       <% if @services %>
       <div class="card">
-        <div class="card-header">
-            Vos prestations :
-        </div>
+        <div class="card-header">Vos prestations :</div>
           <% @services.each do |service| %>
           <ul class="list-group list-group-flush">
             <li class="list-group-item">
@@ -111,8 +122,7 @@
       <% end %>
       </div>
     </div>
-    </div>
-
-
   </div>
+
+
 </div>
