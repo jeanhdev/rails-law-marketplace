@@ -1,10 +1,10 @@
-<center><h2>Votre tableau de bord</h2></center>
+<center><h2>Mes Procédures</h2></center>
 <div class="container">
 	<div class="row">
 
 		<div class="procedures-subblock col-md-7">
 			<div class="card">
-				<div class="card-header text-center"><h4>Procédures</h4>
+				<div class="card-header text-center"><h4>Liste des procédures</h4>
         </div>
 				<div class="card-body">
           <div class="card-header padding-zero">En attente</div>
@@ -97,9 +97,9 @@
 			</div>
 		  </div>
       <div class="services-subblock">
-      <% if @services %>
+      <% if @services.any? %>
       <div class="card">
-        <div class="card-header">Vos prestations :</div>
+        <div class="card-header">Mes prestations :</div>
           <% @services.each do |service| %>
           <ul class="list-group list-group-flush">
             <li class="list-group-item">
