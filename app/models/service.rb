@@ -12,7 +12,7 @@ class Service < ApplicationRecord
   pg_search_scope :global_search,
     against: [:category],
     associated_against: {
-      user: [:last_name, :job, :address, :specialty]
+      user: [:last_name, :first_name, :job, :address, :specialty]
     },
     using: {
       tsearch: { prefix: true }
