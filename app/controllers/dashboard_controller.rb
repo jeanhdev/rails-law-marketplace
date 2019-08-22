@@ -5,5 +5,6 @@ class DashboardController < ApplicationController
     @jobs = @user.job
     @services = @user.services
     @procedures = @user.procedures
+    @proposed_services = @user.proposed_services
   end
 end
