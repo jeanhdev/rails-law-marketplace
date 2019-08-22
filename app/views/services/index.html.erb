@@ -1,6 +1,14 @@
 <div class="container col-md-8">
 
-  <h2>Avocats spécialisés en divorce </h2>
+  <!-- <h2> <%= @services.size %> résultat(s) disponible(s) </h2> -->
+
+  <%if @services.size == 0 %>
+    <h2><%= @services.size %> résultat disponible</h2>
+    <%elsif @services.size == 1 %>
+      <h2><%= @services.size %> résultat disponible</h2>
+        <%else%>
+          <h2><%= @services.size %> résultats disponibles</h2>
+  <%end%>
 
   <!-- <form class="form-inline mb-3 search">
     <input class="form-control search-divorce" type="search" placeholder="Divorce">
