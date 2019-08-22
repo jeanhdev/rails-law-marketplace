@@ -22,8 +22,7 @@
     <%= text_field_tag :query,
       params[:query],
       class: "form-control search-divorce",
-      placeholder: "Recherchez votre avocat, juriste, huissier ou notaire..."
-    %>
+      placeholder: "Recherchez votre service..." %>
     <%= submit_tag "Rechercher", class: "btn btn-primary" %>
     <button type="button" class="btn btn-outline-secondary"><i class="fas fa-sliders-h"></i> Filtres</button>
   <% end %>
@@ -36,7 +35,9 @@
 
   <div class="card-haut d-flex justify-content-between">
     <div class="card-avatar-name d-flex">
-      <%= image_tag(service.user.avatar, class: "rounded-circle", width:"100px", height:"100px") %>
+      <% if service.user.avatar.url.nil? == false %>
+        <%= cl_image_tag(service.user.avatar, class: "rounded-circle", width:"100px", height:"100px") %>
+      <% end %>
       <p class="card-text pl-5">
         <span>Maître <%= service.user.first_name %> <%= service.user.last_name %></span>
         <br>

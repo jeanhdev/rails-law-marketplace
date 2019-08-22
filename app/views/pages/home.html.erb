@@ -3,9 +3,10 @@
 		<div id="tagline" class="align-self-center">
 			<h2>Réglez vos litiges.</h2>
 			<h5>Connectez-vous avec notre réseau de professionels, rapidement et simplement.</h5>
-			<form class="form-inline">
-				<input class="form-control mr-sm-2 w-75 p-3" type="search" placeholder="votre préjudice ? Contester une amande radar, divorcer en ligne..." />
-				<%= link_to "Rechercher", service_divorce_path, class: "btn btn-primary" %>
+			  <%= form_tag services_path, class: "form-inline mb-3 search", method: :get do %>
+    		<%= text_field_tag :query, params[:query], class: "form-control search-divorce", placeholder: "Recherchez votre service..." %>
+    		<%= submit_tag "Rechercher", class: "btn btn-primary" %>
+		  <% end %>
 		</div>
 		<%= image_tag 'home-image.svg', class: 'align-self-center' %>
 	</div>
