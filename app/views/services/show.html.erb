@@ -22,28 +22,24 @@
       </div>
     </div>
     <div class="col-4">
-      <div class='booking'>
-        <div class="form-inputs">
-          <div class="form-group">
-            <form>
-              <div class="title">
-                <h3>Réglez votre litige</h3>
-                <small>Divorce par consentement mutuel</small>
-							</div>
-              <label class="mb-1" for="formGroupExampleInput">Nom</label>
-              <input type="text" class="form-control mb-3" id="formGroupExampleInput" placeholder="">
-              <label class="mb-1" for="formGroupExampleInput">Email</label>
-              <input type="text" class="form-control mb-3" id="formGroupExampleInput" placeholder="">
-              <label class="mb-1" for="formGroupExampleInput">Téléphone</label>
-              <input type="text" class="form-control mb-3" id="formGroupExampleInput" placeholder="">
-              <label class="mb-1" for="exampleFormControlTextarea1">Décrivez votre litige: </label>
-              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-              <hr>
-              <%= link_to 'Démarrer cette procédure', profile_path, class: 'btn_1 full-width'%>
-            </form>
-          </div>
+      <div class="recap">
+        <div class="recap-header">
+          <h5>La procédure comprend:</h5>
+          <small><%= @service.title %></small>
         </div>
+        <div class="list-group-recap">
+          <p class="list-item">1. Vérification des conditions de recevabilité.</p>
+          <p class="list-item">2. Emission du courrier de contestation.</p>
+          <p class="list-item">3. Contestation automatisée.</p>
+          <p class="list-item">4. Suivi de votre dossier auprès de la juridiction saisie.</p>
+          <p class="list-item">5. Défense éventuelle de votre permis si convocation en justice.</p>
+          <p class="list-item">6. Compte rendu de la décision obtenue et clôture du dossier.</p>
+        </div>
+        <%= link_to "Démarrer cette procédure", new_service_procedure_path(@service), class: "btn_1" %>
       </div>
     </div>
   </div>
 </div>
+
+
+
