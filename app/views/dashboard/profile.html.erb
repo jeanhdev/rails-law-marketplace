@@ -77,9 +77,9 @@
               <p><%= link_to "Edit Profile", edit_lawyer_path %></p>
             </div>
           <% end %>
-					<p>Avocat chez <strong>Saul Goodman & Associates.</strong></p>
+					<p>Avocat chez <strong><%= @user.firm %></strong></p>
 					<div class="d-flex">
-						<p><%= image_tag "location.svg", class:"location" %> Albuquerque, Nouveau Mexique</p>
+						<p><%= image_tag "location.svg", class:"location" %> <%= @user.address %></p>
 					</div>
 					<a href="#" class="badge badge-primary"><%= @user.specialty %></a>
 				</div>
