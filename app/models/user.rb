@@ -7,7 +7,7 @@ class User < ApplicationRecord
   # validates :first_name, presence: true
   # validates :last_name, presence: true
   # validates :avatar, presence: true
-
+  mount_uploader :avatar, PhotoUploader
   # verifier que cette ligne pour l'avatar est utile
   # has_attachment :avatar
 

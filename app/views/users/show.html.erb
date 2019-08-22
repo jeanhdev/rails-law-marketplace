@@ -3,6 +3,7 @@
   <%= @user.last_name %>
   <%= @user.email %>
   <% else %>
+  <%= cl_image_tag @user.avatar, height: 300, width: 400, crop: :fill %>
   <%= @user.first_name %>
   <%= @user.last_name %>
   <%= @user.email %>
