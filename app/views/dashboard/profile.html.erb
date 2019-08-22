@@ -88,8 +88,10 @@
 					<div class="d-flex">
 						<p><%= image_tag "location.svg", class:"location" %> <%= @user.address %></p>
 					</div>
-          <% @user.specialty.split(",").each do |special| %>
-					  <a href="#" class="badge badge-primary"><%= special %></a>
+          <% if @user.specialty.nil? == false  %>
+            <% @user.specialty.split(",").each do |special| %>
+					    <a href="#" class="badge badge-primary"><%= special %></a>
+            <% end %>
           <% end %>
 				</div>
 			</div>
