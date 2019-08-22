@@ -4,7 +4,7 @@
 		<%= image_tag "default.png", width: "250px"%>
 	<% end %>
 	<%= form_tag services_path, class: "form-inline mb-3 search d-flex", method: :get do %>
-    	<%= text_field_tag :query, params[:query], class: "form-control search-divorce mr-2", placeholder: "Recherchez votre service..." %>
+    	<%= text_field_tag :query, params[:query], class: "form-control search-divorce mr-2", placeholder: "Recherche..." %>
 	<% end %>
 	</div>
 	<button
