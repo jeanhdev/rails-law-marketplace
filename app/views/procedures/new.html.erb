@@ -1,17 +1,50 @@
-<div class="container col-md-6">
-  <h3>Créer une procédure de <%= @service.title %></h3>
-  <%= simple_form_for [@service, @procedure] do |f| %>
-    <%= f.error_notification %>
-    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+<div class="container">
+  <div class="row">
 
-    <div class="form-inputs">
-      <%= f.input :date, as: :date, html5: true %>
-      <%= f.input :grievance, :label => "Quel est votre grief ?" %>
+    <div class="col-md-8">
+      <h3>Créer une procédure de <%= @service.title %></h3>
+      <%= simple_form_for [@service, @procedure] do |f| %>
+        <%= f.error_notification %>
+        <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+        <div class="form-inputs">
+          <%= f.input :date, as: :date, html5: true %>
+          <%= f.input :grievance, :label => "Quel est votre grief ?" %>
+        </div>
+
+        <div class="form-actions">
+          <%= f.button :submit, class: "btn btn-primary"%>
+        </div>
+        <%= link_to 'Back', service_procedures_path(@service) %>
+      <% end %>
     </div>
 
-    <div class="form-actions">
-      <%= f.button :submit, class: "btn btn-primary"%>
-    </div>
-    <%= link_to 'Back', service_procedures_path(@service) %>
-  <% end %>
+    <div class="col-md-4">
+            <form>
+              <div class="title">
+                <h3>Your booking</h3>
+              </div>
+              <div class="summary">
+                <ul>
+                  <li>Date: <strong class="float-right">11/12/2017</strong></li>
+                  <li>Time: <strong class="float-right">10.30 am</strong></li>
+                  <li>Dr. Name: <strong class="float-right">Dr. julia Jhones</strong></li>
+                </ul>
+              </div>
+              <ul class="treatments checkout clearfix">
+                <li>
+                  Back Pain visit <strong class="float-right">$55</strong>
+                </li>
+                <li>
+                  Cardiovascular screen <strong class="float-right">$55</strong>
+                </li>
+                <li class="total">
+                  Total <strong class="float-right">$110</strong>
+                </li>
+              </ul>
+              <hr>
+              <a href="confirm.html" class="btn_1 full-width">Confirm and pay</a>
+            </form>
+          </div>
+  </div>
 </div>
