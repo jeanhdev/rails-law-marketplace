@@ -11,10 +11,10 @@
             <% @procedures.each do |procedure| %>
               <% if procedure.status == "pending" %>
 						    <ul class="list-group list-group-flush">
-                  <li class="list-group-item list-procedure"><%= procedure.service.title %>
-                    <%= procedure.date %>
-                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modal<%= procedure.id %>">Détails</button>
-                    <div class="modal fade" id="Modal<%= procedure.id %>" tabindex="-1" role="dialog" aria-labelledby="Modal-<%= procedure.id %>" aria-hidden="true">
+                  <li class="list-group-item list-procedure"><%= procedure.service.title %> | <%= procedure.date %>
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Détails</button>
+                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+
                       <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
                           <div class="modal-header">
