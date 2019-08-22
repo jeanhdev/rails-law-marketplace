@@ -78,10 +78,6 @@
             </div>
           <% end %>
 					<p><%= @user.job %> chez <strong><%= @user.firm %></strong></p>
-<<<<<<< HEAD
-=======
-
->>>>>>> 3d8afb3cd3ad8eb2499edb165f26e3e576a692ae
 					<div class="d-flex">
 						<p><%= image_tag "location.svg", class:"location" %> <%= @user.address %></p>
 					</div>
@@ -94,9 +90,7 @@
       <div class="services-subblock">
       <% if @services %>
       <div class="card">
-        <div class="card-header">
-            Vos prestations :
-        </div>
+        <div class="card-header">Vos prestations :</div>
           <% @services.each do |service| %>
           <ul class="list-group list-group-flush">
             <li class="list-group-item">
