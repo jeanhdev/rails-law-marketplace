@@ -11,7 +11,7 @@
             <% if procedure.status == "pending" %>
               <div class="card-header padding-zero">En attente</div>
 						    <ul class="list-group list-group-flush">
-                  <li class="list-group-item list-procedure"><%= procedure.service.title %> | <%= procedure.date %> 
+                  <li class="list-group-item list-procedure"><%= procedure.service.title %> | <%= procedure.date %>
                   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Détails</button>
                     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                       <div class="modal-dialog modal-dialog-centered" role="document">
