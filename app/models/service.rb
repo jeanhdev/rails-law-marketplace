@@ -7,4 +7,14 @@ class Service < ApplicationRecord
   validates :duration, presence: true
   validates :price, presence: true
   validates :category, presence: true, inclusion: { in: CATEGORIES }
+
+  include PgSearch::Model
+  pg_search_scope :global_search,
+    against: [:category],
+    associated_against: {
+      user: [:last_name, :job, :address, :specialty]
+    },
+    using: {
+      tsearch: { prefix: true }
+    }
 end
