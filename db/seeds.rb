@@ -70,19 +70,40 @@ Procedure.destroy_all
 #   },
 # ]
 # Procedure.create!(procedures_attributes)
-# puts 'Finished!'
 
+puts 'Creating Saul Goodman as a laywer...'
 
-puts '----------------------------------'
+goodman_attributes = [{
+    first_name:    'Saul',
+    last_name:     'Goodman',
+    email:         'saul@goodman.com',
+    password:      '123456',
+    job:           'Avocat',
+    specialty:     'Droit pénal',
+    address:       'Texas',
+    experience:    '15 ans',
+    avatar:        'https://vignette.wikia.nocookie.net/legendsofthemultiuniverse/images/a/a4/Saul_S5b.jpg'
+}]
 
-30.times do
+User.create!(goodman_attributes)
+
+# procedure = Procedure.create!(
+#   date:   Faker::Date.backward(days: 1),
+#   status: 'not pending',
+#   grievance: 'I want to be free and sells drugs without trouble'
+# )
+
+puts 'Creating 10 more lawyers...'
+
+10.times do
   user = User.create!(
     first_name: Faker::Name.first_name,
     last_name:  Faker::Name.last_name,
-    job:        'avocat',
+    job:        'Avocat',
     experience: rand(1..15),
     email:      Faker::Internet.email,
     address:    Faker::Address.city,
+    specialty:  'Droit de la famille',
     avatar:     'https://cdn3.iconfinder.com/data/icons/business-avatar-1/512/10_avatar-512.png',
     password:   '123456'
   )
@@ -96,3 +117,5 @@ puts '----------------------------------'
     user:        user
   )
 end
+
+puts 'Finished!'
