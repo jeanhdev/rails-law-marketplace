@@ -11,7 +11,7 @@ class User < ApplicationRecord
   # verifier que cette ligne pour l'avatar est utile
   # has_attachment :avatar
 
-  JOBS = ['avocat', 'notaire', 'huissier', 'juriste', 'justiciable']
+  JOBS = ['Avocat', 'Notaire', 'Huissier', 'Juriste', 'Justiciable']
   # validates :job, inclusion: { in: JOBS }
 
   # has_many :proposed_services, through: :procedures, source: :services
