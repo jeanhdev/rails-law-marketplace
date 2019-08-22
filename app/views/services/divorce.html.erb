@@ -13,7 +13,7 @@
 
   <div class="card-haut d-flex justify-content-between">
     <div class="card-avatar-name d-flex">
-      <img src="https://pbs.twimg.com/profile_images/564566896750493696/7LDNbQbV.jpeg" height="100" width="100" class="rounded-circle" alt="...">
+      <img src="https://pbs.twimg.com/profile_images/564566896750493696/7LDNbQbV.jpeg" height="100" width="100" class="rounded-circle" alt="...">-->
       <p class="card-text pl-5"><span>Maître Saul Goodman</span> <br><small> Avocat à la Cour d'Albuquerque</small></p>
     </div>
 
@@ -50,7 +50,9 @@
 
   <div class="card-haut d-flex justify-content-between">
     <div class="card-avatar-name d-flex">
-      <%= image_tag(service.user.avatar, class: "rounded-circle", width:"100px", height:"100px") %>
+      <% unless @service.user.avatar.blank? %>
+        <%= image_tag(service.user.avatar, class: "rounded-circle", width:"100px", height:"100px") %>
+      <% end %>
       <p class="card-text pl-5">
         <span>Maître <%= service.user.first_name %> <%= service.user.last_name %></span>
         <br>

@@ -82,16 +82,11 @@ goodman_attributes = [{
     specialty:     'Droit pénal',
     address:       'Texas',
     experience:    '15 ans',
-    avatar:        'https://vignette.wikia.nocookie.net/legendsofthemultiuniverse/images/a/a4/Saul_S5b.jpg'
+    # avatar:        'https://vignette.wikia.nocookie.net/legendsofthemultiuniverse/images/a/a4/Saul_S5b.jpg'
 }]
 
 User.create!(goodman_attributes)
-
-# procedure = Procedure.create!(
-#   date:   Faker::Date.backward(days: 1),
-#   status: 'not pending',
-#   grievance: 'I want to be free and sells drugs without trouble'
-# )
+# a.remote
 
 puts 'Creating 10 more lawyers...'
 
@@ -104,7 +99,7 @@ puts 'Creating 10 more lawyers...'
     email:      Faker::Internet.email,
     address:    Faker::Address.city,
     specialty:  'Droit de la famille',
-    avatar:     'https://cdn3.iconfinder.com/data/icons/business-avatar-1/512/10_avatar-512.png',
+    # avatar:     'https://cdn3.iconfinder.com/data/icons/business-avatar-1/512/10_avatar-512.png',
     password:   '123456'
   )
 
@@ -117,5 +112,21 @@ puts 'Creating 10 more lawyers...'
     user:        user
   )
 end
+
+puts 'Creating first client...'
+
+user_attributes = [{
+    first_name:    'Walter',
+    last_name:     'White',
+    email:         'user@hellotenor.com',
+    password:      '123456',
+    job:           'Justiciable',
+    address:       'Texas',
+    # avatar:        'https://i1.wp.com/metro.co.uk/wp-content/uploads/2013/08/750x100010.jpg'
+}]
+
+User.create!(user_attributes)
+
+puts '- - - - - - - - - - - - - - - -'
 
 puts 'Finished!'
