@@ -1,5 +1,4 @@
 <center><h2>Votre tableau de bord</h2></center>
-
 <div class="container">
 	<div class="row">
 
@@ -68,16 +67,21 @@
     <div class="col-md-5">
       <div class="profile-block mb-4">
 			<div class="card-product fixxed">
-				<%= image_tag "saul.jpg", class:"lawyer-avatar"%>
+				<%= cl_image_tag @user.avatar, class:"lawyer-avatar"%>
 				<div class="card-product-infos">
-					<h3>Saul Goodman</h3>
+          <% if (@user.first_name.blank? && @user.last_name.blank?) %>
+            <h6> <strong>Missing name</strong> 👉🏼 <%= link_to "Edit Profile", edit_lawyer_path %></h6>
+          <% else  %>
+					  <div class="d-flex justify-content-between">
+              <h3 class="mr-4"><%= @user.first_name %> <%= @user.last_name %></h3>
+              <p><%= link_to "Edit Profile", edit_lawyer_path %></p>
+            </div>
+          <% end %>
 					<p>Avocat chez <strong>Saul Goodman & Associates.</strong></p>
 					<div class="d-flex">
 						<p><%= image_tag "location.svg", class:"location" %> Albuquerque, Nouveau Mexique</p>
 					</div>
-					<a href="#" class="badge badge-primary">Droit pénal</a>
-					<a href="#" class="badge badge-secondary">Droit de la famille</a>
-					<a href="#" class="badge badge-light">Droit fiscal</a>
+					<a href="#" class="badge badge-primary"><%= @user.specialty %></a>
 				</div>
 			</div>
 		  </div>
