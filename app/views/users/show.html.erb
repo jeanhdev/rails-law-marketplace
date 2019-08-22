@@ -15,7 +15,7 @@
 <% end %>
 
 <% if current_user == @user %>
-  <p><%= link_to 'Update my profile', edit_lawyer_path(@user), class: "btn btn-primary" %></p>
+  <p><%= link_to 'Update my profile', edit_user_path(current_user), class: "btn btn-primary" %></p>
 
   <p><%= link_to 'Delete my profile', user_registration_path, data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger" %></p>
 <% end %>

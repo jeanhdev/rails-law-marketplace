@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     resources :procedures, except: [:destroy]
   end
 
-  get '/edit_lawyer', to: 'users#edit_lawyer', as: 'edit_lawyer'
+  # get '/edit_lawyer', to: 'users#edit_lawyer', as: 'edit_lawyer'
 
   get '/service_divorce', to: 'services#divorce', as: 'service_divorce'
 

@@ -77,11 +77,11 @@
 				<%= cl_image_tag @user.avatar, class:"lawyer-avatar"%>
 				<div class="card-product-infos">
           <% if (@user.first_name.blank? && @user.last_name.blank?) %>
-            <h6> <strong>Missing name</strong> 👉🏼 <%= link_to "Edit Profile", edit_lawyer_path %></h6>
+            <h6> <strong>Missing name</strong> 👉🏼 <%= link_to "Edit Profile", edit_user_registration_path %></h6>
           <% else  %>
 					  <div class="d-flex justify-content-between">
               <h3 class="mr-4"><%= @user.first_name %> <%= @user.last_name %></h3>
-              <p><%= link_to "Edit Profile", edit_lawyer_path %></p>
+              <p><%= link_to "Edit Profile", edit_user_registration_path %></p>
             </div>
           <% end %>
 					<p><%= @user.job %> chez <strong><%= @user.firm %></strong></p>

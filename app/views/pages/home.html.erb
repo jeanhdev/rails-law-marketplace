@@ -4,9 +4,9 @@
 			<h2>Réglez vos litiges.</h2>
 			<h5>Connectez-vous avec notre réseau de professionels, rapidement et simplement.</h5>
 			  <%= form_tag services_path, class: "form-inline mb-3 search", method: :get do %>
-    		<%= text_field_tag :query, params[:query], class: "form-control search-divorce mr-2", placeholder: "Recherchez votre service..." %>
-    		<%= submit_tag "Rechercher", class: "btn btn-primary" %>
-		  <% end %>
+    			<%= text_field_tag :query, params[:query], class: "form-control search-divorce mr-2", placeholder: "Recherchez votre service..." %>
+    			<%= submit_tag "Rechercher", class: "btn btn-primary" %>
+		  	<% end %>
 		</div>
 		<%= image_tag 'home-image.svg', class: 'align-self-center' %>
 	</div>

@@ -1,8 +1,12 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon sticky-top">
+	<div class="d-flex">
 	<%= link_to root_path, class: "navbar-brand" do %>
 		<%= image_tag "default.png", width: "250px"%>
 	<% end %>
-
+	<%= form_tag services_path, class: "form-inline mb-3 search d-flex", method: :get do %>
+    	<%= text_field_tag :query, params[:query], class: "form-control search-divorce mr-2", placeholder: "Recherchez votre service..." %>
+	<% end %>
+	</div>
 	<button
 		class="navbar-toggler"
 		type="button"
@@ -11,9 +15,7 @@
 		aria-controls="navbarSupportedContent"
 		aria-expanded="false"
 		aria-label="Toggle navigation"
-	>
-		<span class="navbar-toggler-icon"></span>
-	</button>
+	><span class="navbar-toggler-icon"></span></button>
 
 	<div class="collapse navbar-collapse" id="navbarSupportedContent">
 		<ul class="navbar-nav mr-auto">
@@ -35,9 +37,9 @@
 				<% end  %> 
 			<li class="nav-item dropdown">
 					<% if current_user.specialty.nil? %>
-						<%= link_to "Avocat?", edit_lawyer_path, class: "dropdown-item" %> 
+						<%= link_to "Avocat?", edit_user_registration_path, class: "dropdown-item" %> 
 					<% end %> 
-					<%= link_to "Edit profile", edit_lawyer_path, class: "dropdown-item" %>
+					<%= link_to "Edit profile", edit_user_registration_path, class: "dropdown-item" %>
 					<%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
 			</li>
 			<% else %>
