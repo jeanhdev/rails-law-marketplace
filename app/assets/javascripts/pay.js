@@ -37,7 +37,7 @@ $(function(){
 
   $(document).click(function(e){
     if(!$(e.target).is(".ccv") || !$(e.target).closest(".ccv").length){
-      $(".card").css("transform", "rotatey(0deg)");
+      $(".bank-card").css("transform", "rotatey(0deg)");
       $(".seccode").css("color", "var(--text-color)");
     }
     if(!$(e.target).is(".expire") || !$(e.target).closest(".expire").length){
@@ -111,7 +111,7 @@ $(function(){
 
   //Security code Input
   $(".ccv").focus(function(){
-    $(".card").css("transform", "rotatey(180deg)");
+    $(".bank-card").css("transform", "rotatey(180deg)");
     $(".seccode").css("color", "white");
   }).keyup(function(){
     $(".seccode").text($(this).val());
@@ -119,7 +119,7 @@ $(function(){
       $(".seccode").html("&#x25CF;&#x25CF;&#x25CF;");
     }
   }).focusout(function() {
-      $(".card").css("transform", "rotatey(0deg)");
+      $(".bank-card").css("transform", "rotatey(0deg)");
       $(".seccode").css("color", "var(--text-color)");
   });
 
