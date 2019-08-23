@@ -64,8 +64,10 @@
   </div>
 
   <div class="card-tags">
-      <% service.user.specialty.split(",").each do |spe|  %>
-        <a href="#" class="badge badge-primary"><%= spe %></a>
+      <% if service.user.specialty %>
+        <% service.user.specialty.split(",").each do |spe|  %>
+          <a href="#" class="badge badge-primary"><%= spe %></a>
+        <% end %>
       <% end %>
   </div>
 
