@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   patch 'procedures/:id/accept', to: 'procedures#accept', as: "accept"
   patch 'procedures/:id/refuse', to: 'procedures#refuse', as: "refuse"
+  get 'procedures/:id/payment', to: 'procedures#payment', as: "payment"
 
   resources :users, only: [:edit, :update]
   resources :services do

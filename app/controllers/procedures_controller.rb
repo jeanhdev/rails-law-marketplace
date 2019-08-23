@@ -1,5 +1,5 @@
 class ProceduresController < ApplicationController
-  before_action :current_procedure, only: [:show, :edit, :update]
+  before_action :current_procedure, only: [:show, :edit, :update, :payment]
   def index
     @procedures = Procedure.all
   end
@@ -19,7 +19,7 @@ class ProceduresController < ApplicationController
     @procedure.user = current_user
     if @procedure.save
       # redirect_to service_path(@service), notice: 'Votre prestation a bien été créé.'
-      redirect_to profile_path, notice: 'Votre prestation a bien été créé.'
+      redirect_to payment_path(@service), notice: 'Votre prestation a bien été créé.'
     else
       render 'new'
     end
@@ -37,6 +37,9 @@ class ProceduresController < ApplicationController
     @procedure.status = "refused"
     @procedure.save
     redirect_to profile_path, notice: "Vous venez de refuser une procédure."
+  end
+
+  def payment
   end
 
   private
