@@ -37,14 +37,14 @@ body {
   0% {
    transform: translate3d(-90px,0,0);
   }
-  100% { 
+  100% {
     transform: translate3d(85px,0,0);
   }
 }
 
 .cta {
     background-position: center;
-    background-size: cover; 
+    background-size: cover;
     height: 75vh;
 }
 
@@ -88,7 +88,7 @@ body {
 .rounded-top {
   border-top-left-radius: 4px !important;
   border-top-right-radius: 4px !important;
-  
+
 }
 
 .bg-blue {
