@@ -2,7 +2,8 @@ class DashboardController < ApplicationController
 
   def profile
     @user = current_user
-    @services = @user.services if @user.job = nil || ""
+    @jobs = @user.job
+    @services = @user.services
     @procedures = @user.procedures
     @proposed_services = @user.proposed_services
   end
