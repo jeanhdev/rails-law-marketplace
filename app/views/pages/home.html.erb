@@ -11,7 +11,8 @@
 		<%= image_tag 'home-image.svg', class: 'align-self-center' %>
 	</div>
 </div>
-
+  
+<div class="wave"></div>
 <!-- Fake comment -->
 <div class="container text-center">
 	<div class="m-4">
@@ -19,21 +20,21 @@
 		<p>Bienvenue sur procédures simplifiées, on vous explique tout 👇🏼.</p>
 	</div>
 	<div class="card-deck">
-		<div class="card p-3">
+		<div class="card card-z p-3">
 			<%= image_tag 'search.png', class: "card-img-top"  %>
 			<div class="card-body">
 				<h5 class="card-title">Découvrez notre annuaire d'avocats.</h5>
 				<p class="card-text">Profitez de notre réseau, trouvez des professionels autour de chez vous.</p>
 			</div>
 		</div>
-		<div class="card p-3">
+		<div class="card card-z p-3">
 			<%= image_tag 'find.png', class: "card-img-top"  %>
 			<div class="card-body">
 				<h5 class="card-title">Trouvez l'avocat qui vous correspond.</h5>
 				<p class="card-text">Nous sommes transparent sur le prix de la prestation, la réputation et les affaires réussies de chacun de nos avocats.</p>
 			</div>
 		</div>
-		<div class="card p-3">
+		<div class="card card-z p-3">
 			<%= image_tag 'book.png', class: "card-img-top"  %>
 			<div class="card-body">
 				<h5 class="card-title">Engagez une procédure.</h5>
@@ -42,39 +43,41 @@
 		</div>
 	</div>
 </div>
+<div style="background: #ebf0fb">
 			<!-- /row -->
-<div class="choix">
+<div class="choix pt-5">
 	<h4>Choisissez votre prestation...</h4>
 </div>
 
-<div class="container">
+<div class="container pb-5">
 	<div class="card-deck mb-4">
-		<%= link_to services_path(query: 'Divorce'), class: "card card-pop rounded-4 shadow" do %>
-				<%= image_tag 'skyler.png', class: 'rounded-top mt-3' %>
-				<h2 class="card-title text-center p-3">Divorce</h2>
+		<%= link_to services_path(query: 'Divorce'), class: "card card-pop rounded-4 shadow pt-3 pb-3", style: "text-decoration: none" do %>
+				<%= image_tag 'divorce.svg', class: 'rounded-top mt-3' %>
+				<h2 class="card-title text-center p-3" style="color: black">Divorce</h2>
 		<% end %>
-		<%= link_to services_path(query: 'Pension alimentaire'), class: "card card-pop rounded-4 shadow" do %>
-				<%= image_tag 'skyler.png', class: 'rounded-top mt-3' %>
-				<h2 class="card-title text-center p-3">Pension alimentaire</h2>
+		<%= link_to services_path(query: 'Pension alimentaire'), class: "card card-pop rounded-4 shadow pt-3 pb-3", style: "text-decoration: none" do %>
+				<%= image_tag 'pension.svg', class: 'rounded-top mt-3' %>
+				<h2 class="card-title text-center p-3" style="color: black">Pension alimentaire</h2>
 		<% end %>
-		<%= link_to services_path(query: 'Stationnement'), class: "card card-pop rounded-4 shadow", style: "text-decoration: none" do %>
-				<%= image_tag 'skyler.png', class: 'rounded-top mt-3' %>
-				<h2 class="card-title text-center p-3">Stationnement</h2>
+		<%= link_to services_path(query: 'Stationnement'), class: "card card-pop rounded-4 shadow pt-3 pb-3", style: "text-decoration: none" do %>
+				<%= image_tag 'parking.svg', class: 'rounded-top mt-3' %>
+				<h2 class="card-title text-center p-3" style="color: black">Stationnement</h2>
 		<% end %>
 	</div>
 
 	<div class="card-deck mb-4">
-		<%= link_to services_path(query: 'Licenciement'), class: "card card-pop rounded-4 shadow" do %>
-				<%= image_tag 'skyler.png', class: 'rounded-top mt-3' %>
-				<h2 class="card-title text-center p-3">Licenciement</h2>
+		<%= link_to services_path(query: 'Licenciement'), class: "card card-pop rounded-4 shadow pt-3 pb-3", style: "text-decoration: none" do %>
+				<%= image_tag 'licenciement.svg', class: 'rounded-top mt-3' %>
+				<h2 class="card-title text-center p-3" style="color: black">Licenciement</h2>
 		<% end %>
-		<%= link_to services_path(query: 'Harcèlement'), class: "card card-pop rounded-4 shadow" do %>
-				<%= image_tag 'skyler.png', class: 'rounded-top mt-3' %>
-				<h2 class="card-title text-center p-3">Harcèlement</h2>
+		<%= link_to services_path(query: 'Harcèlement'), class: "card card-pop rounded-4 shadow pt-3 pb-3", style: "text-decoration: none" do %>
+				<%= image_tag 'bully.svg', class: 'rounded-top mt-3' %>
+				<h2 class="card-title text-center p-3" style="color: black">Harcèlement</h2>
 		<% end %>
-		<%= link_to services_path(query: 'Excès de vitesse'), class: "card card-pop rounded-4 shadow" do %>
-				<%= image_tag 'skyler.png', class: 'rounded-top mt-3' %>
-				<h2 class="card-title text-center p-3">Excès de vitesse</h2>
+		<%= link_to services_path(query: 'Excès de vitesse'), class: "card card-pop rounded-4 shadow pt-3 pb-3", style: "text-decoration: none" do %>
+				<%= image_tag 'vitesse.svg', class: 'rounded-top mt-3' %>
+				<h2 class="text-center p-3" style="color: black">Excès de vitesse</h2>
 		<% end %>
+	</div>
 	</div>
 </div>
