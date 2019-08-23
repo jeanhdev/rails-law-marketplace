@@ -19,7 +19,7 @@ class ProceduresController < ApplicationController
     @procedure.user = current_user
     if @procedure.save
       # redirect_to service_path(@service), notice: 'Votre prestation a bien été créé.'
-      redirect_to payment_path(@service), notice: 'Votre prestation a bien été créé.'
+      redirect_to payment_path(@procedure), notice: 'Votre prestation a bien été créé.'
     else
       render 'new'
     end
