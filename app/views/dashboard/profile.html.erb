@@ -29,8 +29,8 @@
                                 <%= procedure.grievance %>
                               </div>
                               <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer
-                                </button>
+                                <%= link_to "Refuser", refuse_path(procedure), method: :patch, class: "btn btn-outline-danger" %>
+                                <%= link_to "Accepter", accept_path(procedure), method: :patch, class: "btn btn-outline-success" %>
                               </div>
                             </div>
                           </div>
@@ -59,8 +59,7 @@
                                 <%= procedure.grievance %>
                               </div>
                               <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer
-                                </button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
                               </div>
                             </div>
                           </div>
