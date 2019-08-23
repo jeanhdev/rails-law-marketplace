@@ -1,5 +1,5 @@
 class Service < ApplicationRecord
-  CATEGORIES = ["Divorce", "Pension Alimentaire", "Stationnement", "Excès de vitesse", "Licenciement", "Harcèlement"]
+  CATEGORIES = ["Divorce", "Pension Alimentaire", "Stationnement", "Excès de vitesse", "Licenciement", "Harcèlement", "Fiscalité", "Impayés"]
   belongs_to :user
   has_many :procedures, dependent: :destroy
   validates :title, presence: true
