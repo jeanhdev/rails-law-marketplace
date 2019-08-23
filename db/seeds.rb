@@ -109,6 +109,7 @@ User.create!(
     address:    "Paris, FR",
     specialty:  'Droit pénal, Droit du travail',
     avatar:     '',
+    firm:       '',
     password:   '123456'
 )
 
@@ -131,7 +132,7 @@ user_attributes = [{
     last_name:     'Hirtz',
     email:         'jean@hellotenor.com',
     password:      '123456',
-    job:           'Justiciable',
+    job:           '',
     address:       'Bordeaux',
     avatar:        ''
 }]

@@ -152,7 +152,9 @@
               <p><%= link_to "Edit Profile", edit_user_registration_path %></p>
             </div>
           <% end %>
+          <% if @jobs.present?  %>
 					<p><%= @user.job %> chez <strong><%= @user.firm %></strong></p>
+          <% end %>
 					<div class="d-flex">
 						<p><%= image_tag "location.svg", class:"location" %> <%= @user.address %></p>
 					</div>
