@@ -26,7 +26,7 @@
                                 </button>
                               </div>
                               <div class="modal-body">
-                                <%= procedure.grievance %>
+                                <%= simple_format procedure.grievance %>
                               </div>
                               <div class="modal-footer">
                                 <%= link_to "Refuser", refuse_path(procedure), method: :patch, class: "btn btn-outline-danger" %>
@@ -56,7 +56,7 @@
                                 </button>
                               </div>
                               <div class="modal-body">
-                                <%= procedure.grievance %>
+                                <%= simple_format procedure.grievance %>
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
@@ -90,7 +90,7 @@
                                 </button>
                               </div>
                               <div class="modal-body">
-                                <%= procedure.grievance %>
+                                <%= simple_format procedure.grievance %>
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer
@@ -120,7 +120,7 @@
                                 </button>
                               </div>
                               <div class="modal-body">
-                                <%= procedure.grievance %>
+                                <%= simple_format procedure.grievance %>
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer
