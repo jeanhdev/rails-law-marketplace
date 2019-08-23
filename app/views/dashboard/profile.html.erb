@@ -1,4 +1,4 @@
-<center><h2>Mes Procédures</h2></center>
+<center><h2 class="m-4">Mes Procédures</h2></center>
 <div class="container">
 	<div class="row">
 
@@ -71,7 +71,7 @@
   				    </div>
          <% else %>
          <div class="card">
-          <div class="card-header text-center"><h4>Liste des pro</h4>
+          <div class="card-header text-center"><h4>Liste des procédures</h4>
           </div>
           <div class="card-body">
             <div class="card-header padding-zero">En attente</div>
@@ -152,7 +152,9 @@
               <p><%= link_to "Edit Profile", edit_user_registration_path %></p>
             </div>
           <% end %>
+          <% if @jobs.present?  %>
 					<p><%= @user.job %> chez <strong><%= @user.firm %></strong></p>
+          <% end %>
 					<div class="d-flex">
 						<p><%= image_tag "location.svg", class:"location" %> <%= @user.address %></p>
 					</div>

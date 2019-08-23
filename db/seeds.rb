@@ -71,58 +71,70 @@ Procedure.destroy_all
 # ]
 # Procedure.create!(procedures_attributes)
 
-puts 'Creating Saul Goodman as a laywer...'
 
-goodman_attributes = [{
-    first_name:    'Saul',
-    last_name:     'Goodman',
-    email:         'saul@goodman.com',
-    password:      '123456',
-    job:           'Avocat',
-    specialty:     'Droit pénal',
-    address:       'Texas',
-    experience:    '15 ans',
-    avatar:        'https://vignette.wikia.nocookie.net/legendsofthemultiuniverse/images/a/a4/Saul_S5b.jpg'
-}]
-
-User.create!(goodman_attributes)
 # a.remote
 
-puts 'Creating 10 more lawyers...'
+puts 'Creating 10 NY top lawyers...'
 
-10.times do
-  user = User.create!(
-    first_name: Faker::Name.first_name,
-    last_name:  Faker::Name.last_name,
+User.create!(
+    first_name: "Kenneth",
+    last_name:  "H. Eckstein",
     job:        'Avocat',
-    experience: rand(1..15),
-    email:      Faker::Internet.email,
-    address:    Faker::Address.city,
-    specialty:  'Droit de la famille',
-    avatar:     'https://cdn3.iconfinder.com/data/icons/business-avatar-1/512/10_avatar-512.png',
+    experience: 15,
+    email:      "kenneth@hellotenor.com",
+    address:    "New York, US",
+    specialty:  'Droit fiscal',
+    avatar:     '',
     password:   '123456'
-  )
+)
 
-  service = Service.create!(
-    title:       'Divorce par consentement mutuel',
-    description: Faker::Quote.famous_last_words,
-    category:    'Divorce',
-    duration:    rand(1..3),
-    price:       rand(300...1000),
-    user:        user
-  )
-end
+User.create!(
+    first_name: "Robert",
+    last_name:  "T. Schmidt",
+    job:        'Avocat',
+    experience: 10,
+    email:      "robert@hellotenor.com",
+    address:    "London, UK",
+    specialty:  'Droit fiscal',
+    avatar:     '',
+    password:   '123456'
+)
 
-puts 'Creating first client...'
+User.create!(
+    first_name: "Eric",
+    last_name:  "Dupond-Moretti",
+    job:        'Avocat',
+    experience: 12,
+    email:      "eric@hellotenor.com",
+    address:    "Paris, FR",
+    specialty:  'Droit pénal, Droit du travail',
+    avatar:     '',
+    firm:       '',
+    password:   '123456'
+)
+
+User.create!(
+    first_name: "Patrick",
+    last_name:  "Maisonneuve",
+    job:        'Avocat',
+    experience: 8,
+    email:      "patrick@hellotenor.com",
+    address:    "Paris, FR",
+    specialty:  'Droit pénal, Droit fiscal',
+    avatar:     '',
+    password:   '123456'
+)
+
+puts 'Creating Jean as a client...'
 
 user_attributes = [{
-    first_name:    'Walter',
-    last_name:     'White',
-    email:         'user@hellotenor.com',
+    first_name:    'Jean',
+    last_name:     'Hirtz',
+    email:         'jean@hellotenor.com',
     password:      '123456',
-    job:           'Justiciable',
-    address:       'Texas',
-    avatar:        'https://i1.wp.com/metro.co.uk/wp-content/uploads/2013/08/750x100010.jpg'
+    job:           '',
+    address:       'Bordeaux',
+    avatar:        ''
 }]
 
 User.create!(user_attributes)
