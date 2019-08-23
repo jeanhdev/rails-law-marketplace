@@ -3,7 +3,7 @@
   <!-- <h2> <%= @services.size %> résultat(s) disponible(s) </h2> -->
 
   <%if @services.size == 0 %>
-    <h2><%= @services.size %> résultat disponible</h2>
+    <h2>Aucun résultat disponible</h2>
     <%elsif @services.size == 1 %>
       <h2><%= @services.size %> résultat disponible</h2>
         <%else%>
@@ -23,8 +23,8 @@
       params[:query],
       class: "form-control search-divorce",
       placeholder: "Recherchez votre service..." %>
-    <%= submit_tag "Rechercher", class: "btn btn-primary" %>
-    <button type="button" class="btn btn-outline-secondary"><i class="fas fa-sliders-h"></i> Filtres</button>
+    <%= submit_tag "Rechercher", class: "submitbtn btn btn-primary" %>
+    <button type="button" class="filterbtn btn btn-outline-secondary"><i class="fas fa-sliders-h"></i> Filtres</button>
   <% end %>
 
   <!-- Form de search query -->
