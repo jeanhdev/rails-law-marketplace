@@ -64,12 +64,12 @@
   </div>
 
   <div class="card-tags">
-    <a href="#" class="badge badge-primary">Droit pénal</a>
-    <a href="#" class="badge badge-secondary">Droit de la famille</a>
-    <a href="#" class="badge badge-light">Droit fiscal</a>
+      <% service.user.specialty.split(",").each do |spe|  %>
+        <a href="#" class="badge badge-primary"><%= spe %></a>
+      <% end %>
   </div>
 
 </div>
 
-  <% end %>
+<% end %>
 </div>
