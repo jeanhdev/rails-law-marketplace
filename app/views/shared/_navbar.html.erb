@@ -23,24 +23,24 @@
 			<li class="nav-item active">
 				<%= link_to "Tableau de Bord", profile_path, class: "nav-link stylish-link" %>
 			</li>
-			<li class="nav-item active">
-				<%= link_to "Home", root_path, class: "nav-link stylish-link" %>
-			</li>
-				<% if current_user.specialty.nil? %> 
+			<!-- <li class="nav-item active">
+				<%= link_to "Accueil", root_path, class: "nav-link stylish-link" %>
+			</li> -->
+				<% if current_user.specialty.nil? %>
 					<%= image_tag "avatar-heisen.png", class: "avatar dropdown-toggle",
 					id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
 					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 				<% else  %>
 					<%= image_tag "avatar-saul.png", class: "avatar dropdown-toggle",
 					id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown"> 
-				<% end  %> 
+					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+				<% end  %>
 			<li class="nav-item dropdown">
 					<!--<% if current_user.specialty.nil? %>
-						<%= link_to "Avocat?", edit_user_registration_path, class: "dropdown-item" %> 
+						<%= link_to "Avocat?", edit_user_registration_path, class: "dropdown-item" %>
 					<% end %> -->
-					<%= link_to "Edit profile", edit_user_registration_path, class: "dropdown-item" %>
-					<%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+					<%= link_to "Modifier votre profil", edit_user_registration_path, class: "dropdown-item" %>
+					<%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
 			</li>
 			<% else %>
 			<li class="nav-item">
