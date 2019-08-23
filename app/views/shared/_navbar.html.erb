@@ -1,9 +1,9 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon sticky-top">
-	<div class="d-flex">
+	<div class="d-flex justify-content-between">
 	<%= link_to root_path, class: "navbar-brand" do %>
 		<%= image_tag "default.png", width: "250px"%>
 	<% end %>
-	<%= form_tag services_path, class: "form-inline mb-3 search d-flex", method: :get do %>
+	<%= form_tag services_path, class: "search", method: :get do %>
     	<%= text_field_tag :query, params[:query], class: "form-control search-divorce mr-2", placeholder: "Recherche..." %>
 	<% end %>
 	</div>
@@ -23,18 +23,14 @@
 			<li class="nav-item active">
 				<%= link_to "Tableau de Bord", profile_path, class: "nav-link stylish-link" %>
 			</li>
-			<!-- <li class="nav-item active">
-				<%= link_to "Accueil", root_path, class: "nav-link stylish-link" %>
-			</li> -->
-				<% if current_user.specialty.nil? %>
-					<%= image_tag "avatar-heisen.png", class: "avatar dropdown-toggle",
+
+			<li class="nav-item active">
+				<%= link_to "Home", root_path, class: "nav-link stylish-link" %>
+			</li>
+					<%= image_tag "avatar.png", class: "avatar dropdown-toggle",
 					id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
 					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-				<% else  %>
-					<%= image_tag "avatar-saul.png", class: "avatar dropdown-toggle",
-					id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-				<% end  %>
+
 			<li class="nav-item dropdown">
 					<!--<% if current_user.specialty.nil? %>
 						<%= link_to "Avocat?", edit_user_registration_path, class: "dropdown-item" %>
