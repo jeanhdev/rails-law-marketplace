@@ -27,7 +27,7 @@ class ServicesController < ApplicationController
     @service = Service.new(service_params)
     @service.user = current_user
     if @service.save
-      redirect_to service_path(@service), notice: 'Votre prestation a bien été créé.'
+      redirect_to profile_path, notice: 'Votre prestation a bien été créé.'
     else
       render 'new'
     end
@@ -38,7 +38,7 @@ class ServicesController < ApplicationController
 
   def update
     if @service.update(service_params)
-      redirect_to service_path(current_user), notice: 'Votre prestation a bien été modifié.'
+      redirect_to profile_path, notice: 'Votre prestation a bien été modifié.'
     else
       render 'edit'
     end
